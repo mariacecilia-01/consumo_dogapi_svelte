@@ -32,61 +32,98 @@
     }
 </script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap"
+    rel="stylesheet"
+/>
+
 <main>
-    <h1>Resultados para sua busca: {raca}</h1>
+    <div class="cabecalho">
+        <h1>
+            Resultados para sua busca
+            <span class="fundoColorido">"{raca}"</span>
+        </h1>
+
+        <img
+            src="/src/img/casa.png"
+            alt="casa"
+            id="voltar"
+            on:click={voltarPaginaInicial}
+        />
+    </div>
 
     {#if erro}
         <p>{erro}</p>
     {:else}
-        <div class="grid-imagens">
+        <div class="layout">
             {#each imagens as img}
-                <img src={img} alt="Cachorro {raca}" />
+                <img src={img} alt="Cachorro {raca}" loading="lazy" />
             {/each}
         </div>
     {/if}
-
-    <button class="voltar" on:click={voltarPaginaInicial}> Voltar </button>
 </main>
 
 <style>
     main {
-        font-family: "Poetsen One", sans-serif;
-        padding: 2rem;
+        font-family: "Comfortaa";
+        padding: 1rem;
         text-align: center;
         background: #f5f5f5;
-        min-height: 100vh;
+        max-height: 100vh;
+    }
+
+    .cabecalho {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    .cabecalho img {
+        position: absolute; /* tira do fluxo do flex */
+        right: 0; /* canto direito */
+        height: 50px; /* mantém seu tamanho */
+        cursor: pointer; /* deixa com cursor de clique */
+    }
+
+    .cabecalho img:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
     }
 
     h1 {
-        margin-bottom: 1.5rem;
-        color: #333;
+        margin: 1.5rem;
     }
 
-    .grid-imagens {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin-bottom: 2rem;
+    .fundoColorido {
+        background-color: #ffeb3b;
+        padding: 0.2rem 0.4rem;
+        border-radius: 4px;
+        color: #000;
+        font-weight: bold;
     }
 
-    .grid-imagens img {
+    .fundoColorido:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        transition: box-shadow 0.3s;
+    }
+
+    .layout {
+        column-count: 5;
+        column-gap: 1rem;
+    }
+
+    .layout img {
         width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1rem;
+        border-radius: 12px;
+        display: block;
     }
 
-    .voltar {
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
-        border: none;
-        border-radius: 5px;
-        background: #ff6b6b;
-        color: white;
-        cursor: pointer;
-        transition: background 0.2s;
-    }
-
-    .voltar:hover {
-        background: #ff4757;
+    img:hover {
+        transform: scale(1) rotate(-3deg);
+        transition: transform 0.3s ease;
     }
 </style>

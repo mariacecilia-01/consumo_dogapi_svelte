@@ -16,15 +16,15 @@
 	}
 </script>
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-	href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
-	rel="stylesheet"
-/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
 
 <main>
-	<h1>Busca Dog</h1>
+	<img src="/src/img/buscaDogLogo.png"
+	alt="logo"
+	id="logo"
+	/>
 
 	<div class="busca">
 		<input
@@ -50,13 +50,11 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background-color: bisque;
 		height: 100vh;
 	}
 
-	h1 {
-		color: rgb(172, 0, 66);
-		font-family: "Poetsen One";
+	#logo{
+		height: 110px;
 	}
 
 	.busca {
@@ -79,5 +77,8 @@
 		border-radius: 20px;
 		border: none;
 		text-align: center;
+		font-style: italic;
+		background-color: antiquewhite;
 	}
+
 </style>
