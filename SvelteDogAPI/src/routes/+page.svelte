@@ -1,34 +1,47 @@
 <script>
-	import { onMount } from "svelte";
+	import { goto } from "$app/navigation";
+
+	let raca = ""
 
 	async function buscandoCachorro() {
-		const input = document.getElementById("input").value;
 
-		const url = `https://dog.ceo/api/breeds/{$input}/image`;
+		if (!raca.trim()) return
+		goto(`/resultadoBusca/${raca.toLowerCase().replace(' ', '-')}`)
+	}
 
-		const response = await fetch(url);
-		const dados = await response.json();
+	function pesquisarAoPressionarTeclaEnter(e) {
+		if (e.key === "Enter") {
+			buscandoCachorro()
+		}
 	}
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap" rel="stylesheet"
+<link
+	href="https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap"
+	rel="stylesheet"
 />
 
 <main>
 	<h1>Busca Dog</h1>
 
 	<div class="busca">
-		<input type="text" id="input" placeholder="Busque a raça do cachorro"/>
+		<input
+			type="text"
+			id="input"
+			placeholder="Busque a raça do cachorro"
+			bind:value={raca}
+			on:keydown={pesquisarAoPressionarTeclaEnter}
+		/>
 
-			<img src="/src/img/Search.svg" alt="icone de busca" id="botaoBusca">
-
+		<img
+			src="/src/img/Search.svg"
+			alt="icone de busca"
+			id="iconeBusca"
+			on:click={buscandoCachorro}
+		/>
 	</div>
-
-	
-
-
 </main>
 
 <style>
@@ -43,22 +56,21 @@
 
 	h1 {
 		color: rgb(172, 0, 66);
-		font-family: 'Poetsen One';
+		font-family: "Poetsen One";
 	}
 
-	.busca{
+	.busca {
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
-	#botaoBusca{
+	#iconeBusca {
 		position: absolute;
 		right: 0;
 		padding: 10px;
 		height: 25px;
-	
 	}
 
 	input {
