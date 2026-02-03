@@ -82,10 +82,10 @@
     }
 
     .cabecalho img {
-        position: absolute; /* tira do fluxo do flex */
-        right: 0; /* canto direito */
-        height: 50px; /* mantém seu tamanho */
-        cursor: pointer; /* deixa com cursor de clique */
+        position: absolute;
+        right: 0;
+        height: 50px;
+        cursor: pointer;
     }
 
     .cabecalho img:hover {
