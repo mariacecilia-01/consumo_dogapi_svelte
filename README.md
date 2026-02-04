@@ -3,6 +3,8 @@ Aplicação simples desenvolvida com **Svelte** para consumo da **Dog API**, com
 A aplicação possui duas telas:  
 a **tela de busca**, com uma única caixa de texto para digitar a raça do cachorro e navegar para o resultado, e a **tela de resultado**, que exibe o nome da raça pesquisada, imagens retornadas pela API, mensagem de erro para raças inválidas e um botão para voltar à tela inicial.
 
+**Link da DOG API:** https://dog.ceo/dog-api/documentation/
+
 ## Prévia
 
 ### Tela inicial
@@ -13,15 +15,17 @@ a **tela de busca**, com uma única caixa de texto para digitar a raça do cacho
 
 ## O que é o Svelte
 
-O Svelte é um framework JavaScript para criação de interfaces web modernas.  
+O Svelte é um framework JavaScript para criação de interfaces web modernas. Ele permite que você construa sua aplicação de forma declarativa a partir de componentes que combinam marcação, estilos e comportamentos.  
 Diferente de outros frameworks, ele **não roda no navegador**: o código é compilado em JavaScript puro durante o build, o que resulta em aplicações mais rápidas e leves.
+
+É conhecido como _“o framework que não é um framework”._
 
 ## Por que utilizar o Svelte
 
-- Alto desempenho, com menos JavaScript sendo enviado ao navegador  
-- Curva de aprendizado simples e sintaxe mais limpa    
-- Reatividade nativa sem uso de estruturas complexas    
-- Ideal para aplicaçsões rápidas, modernas e escaláveis
+- Alto desempenho, com menos JavaScript sendo enviado ao navegador. O site carrega mais rápido porque não precisa baixar uma biblioteca base enorme;
+- Curva de aprendizado simples e sintaxe mais limpa;
+- Reatividade nativa sem uso de estruturas complexas;    
+- Ideal para aplicações rápidas, modernas e escaláveis;
 
 ## Em quais cenários o Svelte não é indicado
 
@@ -32,7 +36,7 @@ Diferente de outros frameworks, ele **não roda no navegador**: o código é com
 
 ## Guia de instalação
 
-1. Requisitos do ambiente:
+**1. Requisitos do ambiente:**
 
 Garanta a instalação prévia do **Node.js** e do **npm** executando os comandos:
 
@@ -43,7 +47,7 @@ Caso não estejam instalados, faça o download da versão mais recente em:
 
 https://nodejs.org/
 
-2. Comando de criação do projeto:
+**2. Comando de criação do projeto:**
 
 Na pasta onde o projeto será criado, execute o comando:
 
@@ -51,7 +55,7 @@ npx sv create (nome do projeto)
 
 Responda às perguntas do instalador de acordo com as necessidades do projeto.
 
-3. Como executar a aplicação localmente:
+**3. Como executar a aplicação localmente:**
 
 Acesse a pasta do projeto com o comando:
 
